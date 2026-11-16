@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADISEN CREATIV · Creative Design & Digital Templates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Warna utama */
+  --bg:#DAEAE9;--side:#D1E3E3;--aqua:#AECFD0;--pale:#C3D6DB;--lav:#AEBAD2;--card:#E7F4F4;
+  --teal:#10828C;--teal2:#3A959E;--ink:#223325;--mute:#74827E;
+  /* Aksen */
+  --pink:#F5A9D9;--orange:#EAA595;--lime:#72AB22;--dkgreen:#2F4636;--softpink:#F9EFF3;--warm:#F8B664;--softgreen:#AECF70;
+  /* Enam gradasi, ubah di sini */
+  --gradient-main:linear-gradient(135deg,#DAEAE9 0%,#AECFD0 50%,#D1E3E3 100%);
+  --gradient-teal:linear-gradient(135deg,#D1E3E3 0%,#3A959E 55%,#10828C 100%);
+  --gradient-ice:linear-gradient(135deg,#E7F4F4 0%,#C3D6DB 55%,#AEBAD2 100%);
+  --gradient-green:linear-gradient(135deg,#E7F4F4 0%,#AECF70 55%,#72AB22 100%);
+  --gradient-pink:linear-gradient(135deg,#F9EFF3 0%,#F5A9D9 55%,#AD6590 100%);
+  --gradient-deep:linear-gradient(135deg,#3A959E 0%,#10828C 100%);
+  --gradient-warm:linear-gradient(135deg,#F8B664 0%,#EAA595 55%,#F5A9D9 100%);
+  --sw:240px;--r:22px;--sh:0 10px 28px rgba(16,90,98,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.ic{width:20px;height:20px;flex:none}
+.logo{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--gradient-deep);color:#fff;font-weight:800;font-size:20px;overflow:hidden;flex:none}
+.logo i{position:absolute;inset:0;background-size:cover;background-position:center}
+/* Sidebar */
+.side{position:fixed;inset:0 auto 0 0;width:var(--sw);background:var(--side);padding:22px 14px;display:flex;flex-direction:column;gap:4px;z-index:40;overflow-y:auto;transition:transform .25s}
+.brand{display:flex;gap:10px;align-items:center;padding:0 6px 18px}
+.brand b{display:block;font-size:15px;letter-spacing:.02em;line-height:1.2}
+.brand small{display:block;font-size:11px;color:var(--mute);line-height:1.3;margin-top:2px}
+.gl{font-size:11px;font-weight:700;color:var(--mute);padding:14px 12px 6px;letter-spacing:.08em}
+.side nav a{position:relative;display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:14px;font-size:14px;font-weight:500;transition:background .2s}
+.side nav a:hover{background:rgba(255,255,255,.5)}
+.side nav a.on{background:rgba(16,130,140,.16);color:var(--teal);font-weight:700}
+.side nav a.on::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--teal)}
+.side-cta{margin-top:auto}
+.ov{display:none;position:fixed;inset:0;background:rgba(34,51,37,.4);z-index:35}
+/* Area konten */
+.main{margin-left:calc(var(--sw) + 28px);padding:18px 32px 0;min-height:100vh}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:6px 0 14px;background:var(--bg)}
+.menu-btn,.tb-brand{display:none}
+.sr{display:flex;align-items:center;gap:10px;flex:1;max-width:540px;background:var(--card);border-radius:999px;padding:0 16px;height:46px;box-shadow:var(--sh)}
+.sr input{flex:1;min-width:0;border:0;background:none;outline:0;font-size:14px}
+.sr .ic{color:var(--mute)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;background:var(--gradient-deep);color:#fff;font-weight:700;font-size:14px;box-shadow:0 8px 20px rgba(16,130,140,.28);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:var(--card);color:var(--teal);box-shadow:none}
+.btn.white{background:#fff;color:var(--teal)}
+.btn.sm{padding:9px 16px;font-size:13px}
+/* Hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;background:var(--gradient-main);border-radius:30px;padding:44px;animation:rise .6s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+.hero small{font-weight:700;color:var(--teal);font-size:13px}
+.hero h1{font-size:clamp(28px,4vw,46px);line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:8px 0 14px}
+.hero p{max-width:480px;opacity:.8;margin-bottom:24px}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.hero .ph{border-radius:26px;aspect-ratio:4/3;box-shadow:var(--sh)}
+/* Gambar & placeholder */
+.ph{position:relative;display:grid;place-items:center;background:var(--gradient-ice);color:var(--teal2);overflow:hidden}
+.ph .ic{width:38px;height:38px;opacity:.6}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* Seksi */
+.sec{margin-top:40px}
+.sec h2{font-size:22px;font-weight:800;letter-spacing:-.01em}
+.sec .sub{color:var(--mute);font-size:14px;margin:2px 0 18px}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{display:flex;flex-direction:column;gap:8px;background:var(--gradient-ice);border-radius:var(--r);padding:20px;box-shadow:var(--sh);transition:transform .2s}
+.cat:hover{transform:translateY(-3px)}
+.num{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--card);color:var(--teal);font-weight:800}
+.cat h3{font-size:15px;line-height:1.25;margin-top:6px}
+.cat p{font-size:13px;color:#4d5d58;flex:1}
+.cat .btn{align-self:flex-start;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px}
+.pc{display:flex;flex-direction:column;background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);transition:transform .2s}
+.pc:hover{transform:translateY(-3px)}
+.pc .ph{aspect-ratio:3/4}
+.pb{display:flex;flex-direction:column;gap:6px;padding:14px;align-items:flex-start}
+.pb h3{font-size:14.5px;line-height:1.3}
+.tag{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--gradient-green);color:var(--dkgreen);font-size:11.5px;font-weight:700}
+.more{font-size:13px;font-weight:700;color:var(--teal)}
+.jasa{background:var(--gradient-deep);color:#fff;border-radius:30px;padding:44px;margin-top:40px}
+.jasa .tag{background:var(--gradient-warm);color:var(--ink)}
+.jasa h2{font-size:clamp(22px,3vw,32px);margin:12px 0 8px;font-weight:800;letter-spacing:-.02em}
+.jasa p{max-width:520px;margin-bottom:22px;opacity:.95}
+/* Katalog & detail */
+.crumb{font-size:13px;color:var(--mute);margin:6px 0 10px}
+.crumb a{color:var(--teal);font-weight:700}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none}
+.chip{flex:none;padding:8px 16px;border-radius:999px;background:var(--card);font-size:13px;font-weight:500}
+.chip.on{background:var(--gradient-deep);color:#fff;font-weight:700}
+.empty{text-align:center;background:var(--card);border-radius:var(--r);padding:40px 20px}
+.empty p{margin-bottom:16px;font-weight:700}
+.dh{display:flex;align-items:center;gap:12px;margin:6px 0 16px}
+.dh h2{font-size:18px}
+.back{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--card);box-shadow:var(--sh)}
+.det{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:start}
+.det .ph{border-radius:26px;aspect-ratio:4/3;box-shadow:var(--sh)}
+.det h1{font-size:clamp(24px,3vw,34px);line-height:1.15;letter-spacing:-.02em;margin:12px 0}
+.det p{color:#4d5d58;margin-bottom:22px}
+/* Tentang & FAQ */
+.panel{background:var(--card);border-radius:var(--r);padding:28px;box-shadow:var(--sh)}
+.panel h1{font-size:26px;margin:14px 0 6px}
+.panel ul{margin:10px 0 18px 20px;color:#4d5d58}
+.panel li{margin:4px 0}
+details{background:var(--card);border-radius:18px;padding:16px 20px;margin-bottom:10px;box-shadow:var(--sh)}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--teal);font-size:20px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:#4d5d58;font-size:14px}
+/* Footer */
+footer{margin:48px -32px 0;background:rgba(255,255,255,.4);backdrop-filter:blur(16px);color:var(--ink);padding:36px 32px 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+footer b{color:var(--ink)}
+footer p,footer a{font-size:13.5px;display:block;margin-top:6px;opacity:.85}
+footer a:hover{opacity:1}
+footer .cp{grid-column:1/-1;border-top:1px solid rgba(34,51,37,.12);padding-top:16px;font-size:12.5px;opacity:.7}
+.bn,.only-m{display:none}
+/* Tablet */
+@media(max-width:1100px){:root{--sw:200px}.main{padding:18px 22px 0}footer{margin:48px -22px 0;padding:32px 22px 24px}.cats{grid-template-columns:repeat(2,1fr)}.hero{padding:32px}}
+/* Mobile */
+@media(max-width:860px){
+  .side{transform:translateX(-100%);width:260px;box-shadow:var(--sh)}
+  .side.open{transform:none}
+  .side.open+.ov{display:block}
+  .main{margin:0;padding:12px 14px 96px}
+  .top{flex-wrap:wrap}
+  .menu-btn{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--card)}
+  .tb-brand{display:flex;align-items:center;gap:10px;font-weight:800;flex:1;font-size:15px}
+  .tb-brand .logo{width:34px;height:34px;font-size:16px;border-radius:11px}
+  .sr{order:3;flex-basis:100%;max-width:none}
+  .top .btn{display:none}
+  .hero{grid-template-columns:1fr;padding:24px;border-radius:26px}
+  .hero .ph{order:-1}
+  .cats{gap:12px}.cat{padding:16px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .det{grid-template-columns:1fr;gap:18px}
+  .jasa{padding:28px 22px}
+  footer{grid-template-columns:1fr;margin:40px -14px 0;padding:28px 18px 100px}
+  .only-m{display:block}
+  .bn{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--card);border-radius:22px 22px 0 0;box-shadow:0 -6px 24px rgba(16,90,98,.14);padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
+  .bn a,.bn button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0;border-radius:14px;font-size:11px;font-weight:500;color:var(--mute)}
+  .bn .on{color:var(--teal);font-weight:700;background:rgba(16,130,140,.12)}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== Gaya glass (referensi CoachPro): latar mint-teal, kartu kaca, menu aktif teal ===== */
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(55% 50% at 96% 0%,rgba(174,186,210,.95),transparent 70%),radial-gradient(40% 40% at 0% 0%,rgba(236,247,205,.8),transparent 70%),linear-gradient(160deg,#cfe6e4,#b6d8d8)}
+.side{inset:16px auto 16px 16px;border-radius:28px;background:rgba(255,255,255,.42);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.7);box-shadow:var(--sh)}
+.side nav a{color:var(--teal)}
+.side nav a:hover{background:rgba(255,255,255,.6)}
+.side nav a.on{background:var(--gradient-deep);color:#fff;box-shadow:0 8px 18px rgba(16,130,140,.3)}
+.side nav a.on::before{display:none}
+.top{background:rgba(207,230,228,.6);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.cat,.pc,.panel,details,.sr,.empty,.back,.chip,.menu-btn,.bn,footer{-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7)}
+.pc,.panel,details,.sr,.empty,.back,.chip,.menu-btn,.bn{background:rgba(255,255,255,.5)}
+.cat{background:linear-gradient(135deg,rgba(255,255,255,.65),rgba(195,214,219,.5))}
+.chip.on{background:var(--gradient-deep);border-color:transparent}
+.hero{background:linear-gradient(135deg,rgba(255,255,255,.6),rgba(174,207,208,.45));-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);box-shadow:var(--sh)}
+.btn.ghost{background:rgba(255,255,255,.6);color:var(--teal);border:1px solid rgba(255,255,255,.8);box-shadow:none}
+.num{color:#fff;box-shadow:0 6px 14px rgba(16,90,98,.18)}
+.cat:nth-child(1) .num{background:linear-gradient(135deg,#C4C0F7,#8F8AEA)}
+.cat:nth-child(2) .num{background:linear-gradient(135deg,#F7B3DE,#E77FC0)}
+.cat:nth-child(3) .num{background:linear-gradient(135deg,#F8B664,#EF8F6F)}
+.cat:nth-child(4) .num{background:linear-gradient(135deg,#5FB5BD,#10828C)}
+/* Banner jasa desain dengan bentuk 3D sederhana */
+.jasa{position:relative;overflow:hidden}
+.jasa>*{position:relative;z-index:1}
+.jasa::before{content:"";position:absolute;right:70px;top:-18px;width:92px;height:92px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#E1F4A8,#72AB22)}
+.jasa::after{content:"";position:absolute;right:140px;bottom:-30px;width:130px;height:130px;border-radius:32px;transform:rotate(18deg);background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,.2))}
+@media(max-width:860px){
+  .side{inset:0 auto 0 0;border-radius:0 26px 26px 0;background:rgba(231,244,244,.94)}
+  .jasa::before{right:18px;top:14px;width:56px;height:56px}
+  .jasa::after{right:-34px;bottom:-34px;width:100px;height:100px}
+  .jasa p{max-width:70%}
+}
+.grp{margin-bottom:30px}.gh{display:flex;justify-content:space-between;align-items:center;margin:6px 0 12px}.gh h3{font-size:17px}.gh a{font-size:13px;font-weight:700;color:var(--teal)}
+/* Kartu kategori vertikal: gambar di atas, teks di bawah */
+.cat{padding:0;overflow:hidden}
+.cat .ph{aspect-ratio:4/5}
+.cat .num{position:absolute;top:12px;left:12px;z-index:2}
+.cat .cb{display:flex;flex-direction:column;gap:8px;padding:16px;flex:1}
+.cat h3{margin-top:0}
+/* Header dan footer berbentuk kartu kaca dengan sudut membulat */
+.top{top:8px;margin-bottom:18px;padding:8px 14px;border-radius:26px;border:1px solid rgba(255,255,255,.7);box-shadow:var(--sh)}
+footer{margin:48px 0 28px;border-radius:28px;box-shadow:var(--sh)}
+@media(max-width:860px){
+  .top{top:6px;padding:8px 10px;border-radius:24px}
+  footer{margin:40px 0 0;padding:26px 20px;border-radius:24px}
+}
+</style>
+</head>
+<body>
+<aside class="side" id="side"></aside><div class="ov" id="ov"></div>
+<main class="main">
+  <header class="top">
+    <button class="menu-btn" id="menu" aria-label="Buka menu"></button>
+    <a class="tb-brand" href="#/home" id="tbBrand"></a>
+    <label class="sr"><span id="srIc"></span><input id="q" type="search" placeholder="Cari produk yang kamu butuhkan..." autocomplete="off"></label>
+    <a class="btn sm" id="topWa" target="_blank" rel="noopener">Konsultasi Desain</a>
+  </header>
+  <div id="view"></div>
+  <footer id="foot"></footer>
+</main>
+<nav class="bn" id="bn"></nav>
+
+<script>
+// =======================================
+// KONFIGURASI WEBSITE ADISEN CREATIV
+// Ganti logo, banner, WhatsApp, dan media sosial di sini.
+// WhatsApp: tulis angka saja dengan kode negara, contoh "6281234567890"
+// =======================================
+const siteConfig = {
+  nama: "ADISEN CREATIV",
+  logo: "LINK_LOGO_DI_SINI",
+  banner: "LINK_BANNER_DI_SINI",
+  whatsapp: "NOMOR_WHATSAPP_DI_SINI",
+  instagram: "LINK_INSTAGRAM_DI_SINI",
+  tiktok: "LINK_TIKTOK_DI_SINI",
+  deskripsi: "Creative Design & Digital Templates",
+  headline: "Wujudkan Ide, Hadirkan Visual yang Berkesan.",
+  intro: "Solusi desain grafis dan penyedia template digital untuk kebutuhan personal, organisasi, hingga bisnis. Temukan berbagai inspirasi dan kebutuhan desain bersama Adisen Creativ.",
+  pesanJasa: "Halo Adisen Creativ, saya ingin konsultasi mengenai jasa desain. Saya ingin menyampaikan kebutuhan desain saya.",
+  pesanUmum: "Halo Adisen Creativ, saya ingin bertanya."
+};
+
+// =======================================
+// KATEGORI (kode harus sama dengan kolom "kategori" pada produk)
+// gambar: link foto sampul kategori, tampil di atas kartu pada "Jelajahi Kategori"
+// =======================================
+const categories = [
+  {kode:"poster",    nama:"Template Poster / Flyer",   ikon:"poster", gambar:"TEMPELKAN_LINK_GAMBAR_DI_SINI", deskripsi:"Berbagai template poster dan flyer untuk kebutuhan acara, promosi, dan informasi."},
+  {kode:"instagram", nama:"Design Feed Instagram",     ikon:"insta", gambar:"TEMPELKAN_LINK_GAMBAR_DI_SINI", deskripsi:"Template desain feed Instagram untuk memperkuat tampilan visual media sosial."},
+  {kode:"idcard",    nama:"Design ID Card & Lanyard",  ikon:"id", gambar:"TEMPELKAN_LINK_GAMBAR_DI_SINI", deskripsi:"Desain ID card dan lanyard untuk organisasi, kegiatan, sekolah, dan kebutuhan profesional."},
+  {kode:"mockup",    nama:"Mockup 3D Canva",           ikon:"cube", gambar:"TEMPELKAN_LINK_GAMBAR_DI_SINI", deskripsi:"Berbagai mockup visual untuk menampilkan desain dengan lebih menarik."}
+];
+
+// =======================================
+// DATA PRODUK ADISEN CREATIV
+// TAMBAHKAN PRODUK BARU DI BAGIAN INI
+// Salin satu blok { ... }, beri id baru, lalu isi foto, link, dan linkBeli.
+// foto = gambar produk | link = tombol Lihat Produk | linkBeli = tombol Beli Sekarang
+// kategori: poster | instagram | idcard | mockup
+// Jika link dikosongkan, tombol Lihat Produk tidak tampil.
+// Tombol Beli Sekarang selalu tampil; jika linkBeli kosong, tombol membuka WhatsApp dengan pesan pembelian.
+// =======================================
+const products = [
+  // ---- poster ----
+  { id: 1, nama: "Poster Event", kategori: "poster", deskripsi: "Poster Event. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 2, nama: "Flyer Promosi", kategori: "poster", deskripsi: "Flyer Promosi. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 3, nama: "Poster Seminar", kategori: "poster", deskripsi: "Poster Seminar. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 4, nama: "Poster Lomba", kategori: "poster", deskripsi: "Poster Lomba. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 5, nama: "Flyer Diskon", kategori: "poster", deskripsi: "Flyer Diskon. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 6, nama: "Poster Konser", kategori: "poster", deskripsi: "Poster Konser. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 7, nama: "Poster Webinar", kategori: "poster", deskripsi: "Poster Webinar. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 8, nama: "Flyer Open Recruitment", kategori: "poster", deskripsi: "Flyer Open Recruitment. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 9, nama: "Poster Hari Besar", kategori: "poster", deskripsi: "Poster Hari Besar. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 10, nama: "Flyer Kuliner", kategori: "poster", deskripsi: "Flyer Kuliner. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 11, nama: "Poster Bakti Sosial", kategori: "poster", deskripsi: "Poster Bakti Sosial. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 12, nama: "Poster Pameran", kategori: "poster", deskripsi: "Poster Pameran. Template siap edit untuk promosi dan informasi.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  // ---- instagram ----
+  { id: 13, nama: "Feed Instagram Dasar", kategori: "instagram", deskripsi: "Feed Instagram Dasar. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 14, nama: "Paket Feed Minimalis", kategori: "instagram", deskripsi: "Paket Feed Minimalis. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 15, nama: "Feed Katalog Produk", kategori: "instagram", deskripsi: "Feed Katalog Produk. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 16, nama: "Feed Quotes Motivasi", kategori: "instagram", deskripsi: "Feed Quotes Motivasi. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 17, nama: "Feed Promo Diskon", kategori: "instagram", deskripsi: "Feed Promo Diskon. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 18, nama: "Feed Kuliner", kategori: "instagram", deskripsi: "Feed Kuliner. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 19, nama: "Feed Fashion", kategori: "instagram", deskripsi: "Feed Fashion. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 20, nama: "Feed Edukasi Carousel", kategori: "instagram", deskripsi: "Feed Edukasi Carousel. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 21, nama: "Feed Testimoni", kategori: "instagram", deskripsi: "Feed Testimoni. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 22, nama: "Feed Ucapan Selamat", kategori: "instagram", deskripsi: "Feed Ucapan Selamat. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 23, nama: "Feed Pengumuman", kategori: "instagram", deskripsi: "Feed Pengumuman. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 24, nama: "Feed Profil Bisnis", kategori: "instagram", deskripsi: "Feed Profil Bisnis. Template feed yang rapi dan konsisten untuk media sosial.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  // ---- idcard ----
+  { id: 25, nama: "ID Card Organisasi", kategori: "idcard", deskripsi: "ID Card Organisasi. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 26, nama: "Lanyard Kegiatan", kategori: "idcard", deskripsi: "Lanyard Kegiatan. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 27, nama: "ID Card Panitia", kategori: "idcard", deskripsi: "ID Card Panitia. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 28, nama: "ID Card Sekolah", kategori: "idcard", deskripsi: "ID Card Sekolah. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 29, nama: "ID Card Karyawan", kategori: "idcard", deskripsi: "ID Card Karyawan. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 30, nama: "Lanyard Seminar", kategori: "idcard", deskripsi: "Lanyard Seminar. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 31, nama: "ID Card Peserta Lomba", kategori: "idcard", deskripsi: "ID Card Peserta Lomba. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 32, nama: "ID Card Mahasiswa", kategori: "idcard", deskripsi: "ID Card Mahasiswa. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 33, nama: "ID Card Komunitas", kategori: "idcard", deskripsi: "ID Card Komunitas. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 34, nama: "Lanyard Organisasi", kategori: "idcard", deskripsi: "Lanyard Organisasi. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 35, nama: "ID Card Relawan", kategori: "idcard", deskripsi: "ID Card Relawan. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 36, nama: "ID Card Member", kategori: "idcard", deskripsi: "ID Card Member. Desain siap cetak untuk organisasi dan kegiatan.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  // ---- mockup ----
+  { id: 37, nama: "Mockup 3D Buku", kategori: "mockup", deskripsi: "Mockup 3D Buku. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 38, nama: "Mockup 3D Kemasan", kategori: "mockup", deskripsi: "Mockup 3D Kemasan. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 39, nama: "Mockup 3D Kotak Produk", kategori: "mockup", deskripsi: "Mockup 3D Kotak Produk. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 40, nama: "Mockup 3D Botol", kategori: "mockup", deskripsi: "Mockup 3D Botol. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 41, nama: "Mockup 3D Tote Bag", kategori: "mockup", deskripsi: "Mockup 3D Tote Bag. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 42, nama: "Mockup 3D Kaos", kategori: "mockup", deskripsi: "Mockup 3D Kaos. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 43, nama: "Mockup 3D Cangkir", kategori: "mockup", deskripsi: "Mockup 3D Cangkir. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 44, nama: "Mockup 3D Smartphone", kategori: "mockup", deskripsi: "Mockup 3D Smartphone. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 45, nama: "Mockup 3D Brosur", kategori: "mockup", deskripsi: "Mockup 3D Brosur. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 46, nama: "Mockup 3D Kartu Nama", kategori: "mockup", deskripsi: "Mockup 3D Kartu Nama. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 47, nama: "Mockup 3D Paper Bag", kategori: "mockup", deskripsi: "Mockup 3D Paper Bag. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" },
+  { id: 48, nama: "Mockup 3D Laptop", kategori: "mockup", deskripsi: "Mockup 3D Laptop. Mockup visual untuk menampilkan desain dengan lebih menarik.", foto: "TEMPELKAN_LINK_FOTO_DI_SINI", link: "TEMPELKAN_HYPERLINK_PRODUK_DI_SINI", linkBeli: "TEMPELKAN_HYPERLINK_BELI_DI_SINI" }
+];
+
+// =======================================
+// DATA FAQ DAN TENTANG KAMI (mudah diedit)
+// =======================================
+const faqs = [
+  {q:"Apa itu Adisen Creativ?", a:"Adisen Creativ adalah penyedia template digital dan jasa desain grafis untuk kebutuhan personal, organisasi, dan bisnis."},
+  {q:"Bagaimana cara mengakses template?", a:"Buka halaman produk, lalu tekan tombol Lihat Produk. Kamu akan diarahkan ke tautan template."},
+  {q:"Apakah template dapat diedit?", a:"Ya. Template dirancang agar mudah disesuaikan dengan nama, warna, dan konten milikmu."},
+  {q:"Bagaimana cara memesan jasa desain?", a:"Tekan tombol Pesan Jasa Desain via WhatsApp, lalu ceritakan kebutuhan dan konsep desainmu."},
+  {q:"Bagaimana cara menghubungi Adisen Creativ?", a:"Hubungi kami lewat WhatsApp, Instagram, atau TikTok. Tautannya ada di menu Hubungi Kami dan bagian bawah halaman."}
+];
+const tentang = "Adisen Creativ membantu kebutuhan visual personal, organisasi, dan bisnis lewat template digital yang siap pakai dan layanan desain sesuai permintaan.";
+
+// =======================================
+// MESIN WEBSITE (tidak perlu diubah untuk menambah produk)
+// =======================================
+const P = {
+  home:'<path d="M3 11l9-8 9 8M5 10v10h14V10"/>',
+  grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',
+  poster:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>',
+  insta:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/>',
+  id:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.5-2 5.500-2 6 0M15 10h3M15 14h3"/>',
+  cube:'<path d="M12 3l8 4.500v9L12 21l-8-4.500v-9zM12 12l8-4.500M12 12v9M12 12L4 7.500"/>',
+  info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.500v.5"/>',
+  help:'<circle cx="12" cy="12" r="9"/><path d="M9.500 9.500a2.500 2.500 0 115 0c0 1.500-2.500 2-2.500 3.500M12 17v.5"/>',
+  chat:'<path d="M4 5h16v11H9l-5 4z"/>',
+  search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+  menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',
+  back:'<path d="M15 5l-7 7 7 7"/>',
+  ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5H5V6h5"/>',
+  img:'<rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M4 18l5-5 4 4 3-3 4 4"/>'
+};
+const I = n => `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${P[n]}</svg>`;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ok = u => /^(https?:|data:)/i.test(u || '');
+const wa = m => `https://wa.me/${String(siteConfig.whatsapp).replace(/\D/g,'')}?text=${encodeURIComponent(m)}`;
+const catOf = k => categories.find(c => c.kode === k);
+const catName = k => (catOf(k) || {nama: k}).nama;
+const logo = () => `<span class="logo">A${ok(siteConfig.logo) ? `<i style="background-image:url('${esc(siteConfig.logo)}')"></i>` : ''}</span>`;
+// Foto produk: placeholder selalu ada di belakang, foto dihapus bila gagal dimuat
+const pic = (u, alt) => `<div class="ph">${I('img')}${ok(u) ? `<img src="${esc(u)}" alt="${esc(alt)}" loading="lazy" onerror="this.remove()">` : ''}</div>`;
+const card = p => `<a class="pc" href="#/product/${esc(p.id)}">${pic(p.foto, p.nama)}<div class="pb"><h3>${esc(p.nama)}</h3><span class="tag">${esc(catName(p.kategori))}</span><span class="more">Lihat detail</span></div></a>`;
+const ext = u => `href="${esc(u)}" target="_blank" rel="noopener"`;
+
+const st = {q:'', cat:'all'};
+let cur = '#/home', last = '';
+
+function homeView(){
+  return `
+  <section class="hero">
+    <div><small>${esc(siteConfig.nama)}</small><h1>${esc(siteConfig.headline)}</h1><p>${esc(siteConfig.intro)}</p>
+      <div class="row"><a class="btn" href="#/catalog/all">Jelajahi Produk</a><a class="btn ghost" ${ext(wa(siteConfig.pesanUmum))}>Konsultasi Desain</a></div></div>
+    ${pic(siteConfig.banner, 'Banner Adisen Creativ')}
+  </section>
+  <section class="sec" id="kategori"><h2>JELAJAHI KATEGORI</h2><p class="sub">Temukan berbagai kebutuhan desainmu.</p>
+    <div class="cats">${categories.map((c,i)=>`<a class="cat" href="#/catalog/${c.kode}"><div class="ph">${I(c.ikon)}${ok(c.gambar) ? `<img src="${esc(c.gambar)}" alt="${esc(c.nama)}" loading="lazy" onerror="this.remove()">` : ''}<span class="num">${i+1}</span></div><div class="cb"><h3>${esc(c.nama.toUpperCase())}</h3><p>${esc(c.deskripsi)}</p><span class="btn sm">Jelajahi</span></div></a>`).join('')}</div>
+  </section>
+  <section class="sec only-m"><h2>Katalog Produk</h2><p class="sub">Pilih produk untuk melihat detailnya.</p>
+    <div class="grid">${products.slice(0,6).map(card).join('')}</div>
+    <div class="row" style="margin-top:16px"><a class="btn ghost" href="#/catalog/all">Lihat Semua Produk</a></div>
+  </section>
+  <section class="jasa"><span class="tag">JASA DESAIN</span><h2>BUTUH DESAIN UNTUK KEBUTUHANMU?</h2>
+    <p>Ceritakan kebutuhan dan konsep desainmu. Kami siap membantu mewujudkannya.</p>
+    <a class="btn white" ${ext(wa(siteConfig.pesanJasa))}>${I('chat')} PESAN JASA DESAIN VIA WHATSAPP</a></section>`;
+}
+
+function catalogView(){
+  const c = catOf(st.cat);
+  return `<p class="crumb"><a href="#/home">Beranda</a> / <a href="#/catalog/all">Katalog</a>${c ? ' / ' + esc(c.nama) : ''}</p>
+  <section class="sec" style="margin-top:0"><h2>${c ? esc(c.nama) : 'Semua Produk'}</h2>
+  <p class="sub">${c ? esc(c.deskripsi) : 'Seluruh template dan desain dari Adisen Creativ.'}</p>
+  <div class="chips"><a class="chip ${st.cat==='all'?'on':''}" href="#/catalog/all">Semua</a>${categories.map(k=>`<a class="chip ${k.kode===st.cat?'on':''}" href="#/catalog/${k.kode}">${esc(k.nama)}</a>`).join('')}</div>
+  <div id="grid"></div></section>`;
+}
+
+// Filter berdasarkan nama, kategori, dan deskripsi
+function renderGrid(){
+  const q = st.q.trim().toLowerCase();
+  const list = products.filter(p => (st.cat==='all' || p.kategori===st.cat) &&
+    (!q || [p.nama, p.deskripsi, p.kategori, catName(p.kategori)].join(' ').toLowerCase().includes(q)));
+  const groups = categories.map(c => ({nama:c.nama, kode:c.kode, l:list.filter(p => p.kategori===c.kode)}))
+    .concat([{nama:'Lainnya', l:list.filter(p => !catOf(p.kategori))}]).filter(g => g.l.length);
+  $('#grid').innerHTML = list.length ? (st.cat==='all' && !q
+    ? groups.map(g => `<div class="grp"><div class="gh"><h3>${esc(g.nama)}</h3>${g.kode ? `<a href="#/catalog/${g.kode}">Lihat semua</a>` : ''}</div><div class="grid">${g.l.map(card).join('')}</div></div>`).join('')
+    : `<div class="grid">${list.map(card).join('')}</div>`)
+    : `<div class="empty"><p>Produk yang kamu cari belum tersedia.</p><a class="btn" href="#/catalog/all" data-clr>Kembali ke Katalog</a></div>`;
+}
+
+function detailView(p){
+  const back = `<button class="back" aria-label="Kembali" onclick="goBack('${esc(p.kategori)}')">${I('back')}</button>`;
+  return `<div class="dh">${back}<h2>Detail Produk</h2></div>
+  <div class="det">${pic(p.foto, p.nama)}<div><span class="tag">${esc(catName(p.kategori))}</span><h1>${esc(p.nama)}</h1><p>${esc(p.deskripsi)}</p>
+  <div class="row"><a class="btn" ${ext(ok(p.linkBeli) ? p.linkBeli : wa('Halo Adisen Creativ, saya ingin membeli produk "' + p.nama + '".'))}>Beli Sekarang</a>
+  ${ok(p.link) ? `<a class="btn ghost" ${ext(p.link)}>${I('ext')} Lihat Produk</a>` : ''}
+  <a class="btn ghost" ${ext(wa('Halo Adisen Creativ, saya tertarik dengan produk "' + p.nama + '".'))}>${I('chat')} Tanya di WA</a></div></div></div>`;
+}
+
+function aboutView(){
+  return `<div class="panel">${logo()}<h1>${esc(siteConfig.nama)}</h1><p>${esc(siteConfig.deskripsi)}</p><p style="margin-top:10px">${esc(tentang)}</p>
+  <h2 style="font-size:17px;margin-top:20px">Fokus layanan</h2><ul>${categories.map(c=>`<li>${esc(c.nama)}</li>`).join('')}<li>Jasa desain sesuai kebutuhan</li></ul>
+  <div class="row"><a class="btn" ${ext(wa(siteConfig.pesanUmum))}>${I('chat')} WhatsApp</a><a class="btn ghost" ${ext(siteConfig.instagram)}>Instagram</a><a class="btn ghost" ${ext(siteConfig.tiktok)}>TikTok</a></div></div>`;
+}
+
+function faqView(){
+  return `<section class="sec" style="margin-top:6px"><h2>FAQ</h2><p class="sub">Pertanyaan yang sering diajukan.</p>${faqs.map(f=>`<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</section>`;
+}
+
+function route(){
+  const [v='home', a] = cur.replace(/^#\/?/, '').split('/');
+  const view = $('#view'); let k = 'home', b = '';
+  if (v === 'catalog'){ st.cat = catOf(a) ? a : 'all'; k = st.cat; b = 'kat'; view.innerHTML = catalogView(); renderGrid(); }
+  else if (v === 'product'){
+    const p = products.find(x => String(x.id) === a);
+    if (!p) return go('#/catalog/all');
+    k = p.kategori; b = 'kat'; view.innerHTML = detailView(p);
+  }
+  else if (v === 'about'){ k = b = 'about'; view.innerHTML = aboutView(); }
+  else if (v === 'faq'){ k = 'faq'; view.innerHTML = faqView(); }
+  else { b = 'home'; view.innerHTML = homeView(); }
+  document.querySelectorAll('.side nav a').forEach(x => x.classList.toggle('on', x.dataset.k === k));
+  document.querySelectorAll('#bn [data-k]').forEach(x => x.classList.toggle('on', x.dataset.k === b));
+  closeMenu(); window.scrollTo(0, 0);
+}
+
+const openMenu = () => { $('#side').classList.add('open'); };
+function closeMenu(){ $('#side').classList.remove('open'); }
+// Navigasi dengan JavaScript (tidak bergantung pada hash browser, aman di semua tampilan HP)
+function go(h){
+  if (h !== cur) last = cur;
+  cur = h;
+  try { history.pushState(null, '', h); } catch (e) {}
+  route();
+}
+function goBack(k){ go(/^#\/catalog/.test(last) ? last : '#/catalog/' + k); }
+
+function init(){
+  const nl = (k,t,i,h) => `<a href="${h}" data-k="${k}">${I(i)}<span>${t}</span></a>`;
+  $('#side').innerHTML = `<a class="brand" href="#/home">${logo()}<div><b>${esc(siteConfig.nama)}</b><small>${esc(siteConfig.deskripsi)}</small></div></a>
+  <p class="gl">NAVIGATION</p><nav>${nl('home','Beranda','home','#/home')}${nl('all','Semua Produk','grid','#/catalog/all')}${categories.map(c=>nl(c.kode,esc(c.nama),c.ikon,'#/catalog/'+c.kode)).join('')}</nav>
+  <p class="gl">INFORMASI</p><nav>${nl('about','Tentang Kami','info','#/about')}${nl('faq','FAQ','help','#/faq')}<a ${ext(wa(siteConfig.pesanUmum))}>${I('chat')}<span>Hubungi Kami</span></a></nav>
+  <a class="btn side-cta" ${ext(wa(siteConfig.pesanJasa))}>${I('chat')} Konsultasi Desain</a>`;
+  $('#menu').innerHTML = I('menu'); $('#srIc').innerHTML = I('search');
+  $('#tbBrand').innerHTML = `${logo()}<span>${esc(siteConfig.nama)}</span>`;
+  $('#topWa').href = wa(siteConfig.pesanJasa);
+  $('#bn').innerHTML = `<a href="#/home" data-k="home">${I('home')}Beranda</a><a href="#/catalog/all" data-k="kat">${I('grid')}Kategori</a><button id="bnSearch">${I('search')}Pencarian</button><a href="#/about" data-k="about">${I('info')}Tentang Kami</a>`;
+  $('#foot').innerHTML = `<div><b>${esc(siteConfig.nama)}</b><p>${esc(siteConfig.deskripsi)}. ${esc(tentang)}</p></div>
+  <div><b>Navigasi</b><a href="#/home">Beranda</a><a href="#/catalog/all">Semua Produk</a><a href="#/about">Tentang Kami</a><a href="#/faq">FAQ</a></div>
+  <div><b>Hubungi</b><a ${ext(wa(siteConfig.pesanUmum))}>WhatsApp</a><a ${ext(siteConfig.instagram)}>Instagram</a><a ${ext(siteConfig.tiktok)}>TikTok</a></div>
+  <p class="cp">© ${new Date().getFullYear()} ${esc(siteConfig.nama)}. Hak cipta dilindungi.</p>`;
+
+  $('#menu').onclick = openMenu; $('#ov').onclick = closeMenu;
+  $('#bnSearch').onclick = () => { $('#q').focus(); window.scrollTo(0, 0); };
+  $('#q').oninput = e => {
+    st.q = e.target.value;
+    if ($('#grid')) renderGrid(); else go('#/catalog/all');
+  };
+  // Semua tautan internal (#/...) ditangani di sini; menu dan kartu mengosongkan pencarian
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#/"]');
+    if (!a) return;
+    e.preventDefault();
+    if (a.closest('.side, #bn, .cat, .brand, .tb-brand, [data-clr]')){ st.q = ''; $('#q').value = ''; }
+    go(a.getAttribute('href'));
+  });
+  const back = () => { cur = location.hash || '#/home'; route(); };
+  window.addEventListener('popstate', back);
+  window.addEventListener('hashchange', () => { if (location.hash && location.hash !== cur) back(); });
+  cur = /^#\//.test(location.hash) ? location.hash : '#/home';
+  route();
+}
+init();
+</script>
+</body>
+</html>
